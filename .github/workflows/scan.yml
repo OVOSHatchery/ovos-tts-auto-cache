@@ -1,4 +1,4 @@
-name: Scan Plugins
+name: Scan TTS Plugins
 on:
   push:
     branches:
@@ -26,18 +26,9 @@ jobs:
       - name: Scan Voices
         run: |
           python auto_synth/scripts/scan_voices.py
-      - name: Scan Dialogs
-        run: |
-          python auto_synth/scripts/scan_dialogs.py
       - name: Commit voice configs
         uses: EndBug/add-and-commit@v9
         with:
           message: New Voices
           add: 'tts_voices/*.json --force'
-          cwd: 'auto_synth'
-      - name: Commit dialog files
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: New dialogs
-          add: 'dialog_files/*.dialog --force'
           cwd: 'auto_synth'

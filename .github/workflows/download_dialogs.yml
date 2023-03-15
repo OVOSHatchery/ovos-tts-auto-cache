@@ -1,0 +1,28 @@
+name: Scan Dialog files
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  scan_dialogs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: dev
+          path: auto_synth
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Scan Dialogs
+        run: |
+          python auto_synth/scripts/scan_dialogs.py
+      - name: Commit dialog files
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: New dialogs
+          add: 'dialog_files/*.dialog --force'
+          cwd: 'auto_synth'

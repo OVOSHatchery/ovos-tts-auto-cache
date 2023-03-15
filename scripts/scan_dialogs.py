@@ -1,4 +1,3 @@
-from os.path import dirname, isfile, isdir
 import zipfile
 from os import makedirs, walk
 from os.path import dirname, isfile, isdir
