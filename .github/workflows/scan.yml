@@ -35,3 +35,9 @@ jobs:
           message: New Voices
           add: 'tts_voices/*.json --force'
           cwd: 'auto_synth'
+      - name: Commit dialog files
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: New dialogs
+          add: 'dialog_files/*.dialog --force'
+          cwd: 'auto_synth'
