@@ -59,6 +59,9 @@ for LANG in LANGS:
                 kwargs["speaker"] = cfg["speaker"]
             if "voice" in cfg:
                 kwargs["voice"] = cfg["voice"]
-            engine.get_tts(utt, wav_file, **kwargs)
-            if "server" in voice:
-                sleep(1)  # do not overload public servers
+            try:
+                engine.get_tts(utt, wav_file, **kwargs)
+                if "server" in voice:
+                    sleep(1)  # do not overload public servers
+            except:
+                print("FAILED to synth", utt)
