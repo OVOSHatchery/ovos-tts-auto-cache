@@ -29,9 +29,15 @@ jobs:
       - name: Do the Synth
         run: |
           python auto_synth/scripts/synth.py
-      - name: Commit samples
+      - name: Commit wav samples
         uses: EndBug/add-and-commit@v9
         with:
-          message: New samples
+          message: New wav samples
           add: 'synth_data/*.wav --force'
+          cwd: 'auto_synth'
+      - name: Commit mp3 samples
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: New wav samples
+          add: 'synth_data/*.mp3 --force'
           cwd: 'auto_synth'

@@ -1,6 +1,6 @@
 import json
-from os import makedirs, listdir
-from os import walk
+from os import makedirs, listdir, walk
+from time import sleep
 from os.path import dirname, isfile
 
 from ovos_plugin_manager.tts import load_tts_plugin
@@ -50,3 +50,11 @@ for LANG in LANGS:
                 continue
             print(wav_file)
             # print(name)
+            kwargs = {}
+            if "speaker" in cfg:
+                kwargs["speaker"] = cfg["speaker"]
+            if "voice" in cfg:
+                kwargs["voice"] = cfg["voice"]
+            engine.get_tts(utt, wav_file, **kwargs)
+            if "server" in voice:
+                sleep(1)  # do not overload public servers
