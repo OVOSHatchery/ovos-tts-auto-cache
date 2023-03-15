@@ -34,6 +34,10 @@ for LANG in LANGS:
         cfg = f"{VOICES_FOLDER}/{voice}"
         if not isfile(cfg):
             continue
+
+        OUTPUT_DIR = f"{OUTPUT_BASE}/{voice.replace('.json', '')}"
+        makedirs(OUTPUT_DIR, exist_ok=True)
+
         with open(cfg) as f:
             cfg = json.load(f)
         m = cfg.pop("module")
@@ -45,7 +49,7 @@ for LANG in LANGS:
 
         for utt in utts:
             name = hash_sentence(utt)
-            wav_file = f"{OUTPUT_BASE}/{voice.replace('.json', '')}/{name}.{engine.audio_ext}"
+            wav_file = f"{OUTPUT_DIR}/{name}.{engine.audio_ext}"
             if isfile(wav_file):  # handle converted mp3 files
                 continue
             print(wav_file)
