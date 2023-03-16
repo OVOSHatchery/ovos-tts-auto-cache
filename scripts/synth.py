@@ -7,7 +7,6 @@ from ovos_plugin_manager.tts import load_tts_plugin
 from ovos_plugin_manager.utils.tts_cache import hash_sentence
 
 LANGS = ["en-us", "es-es", "de-de", "fr-fr", "it-it", "pt-pt"]
-LANGS = [ "de-de", "fr-fr", "it-it", "pt-pt"]
 VOICES_BASE = f"{dirname(dirname(__file__))}/tts_voices"
 OUTPUT_BASE = f"{dirname(dirname(__file__))}/synth_data"
 makedirs(OUTPUT_BASE, exist_ok=True)
