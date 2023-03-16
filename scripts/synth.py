@@ -44,7 +44,11 @@ for LANG in LANGS:
         if m in engines:
             engine = engines[m]
         else:
-            engine = engines[m] = load_tts_plugin(m)(config=cfg)
+            try:
+                engine = engines[m] = load_tts_plugin(m)(config=cfg)
+            except:
+                print("failed to load engine", m)
+                continue
 
         for utt in utts:
             name = hash_sentence(utt)
