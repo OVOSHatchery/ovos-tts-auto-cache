@@ -15,7 +15,7 @@ SKILLS_FOLDER = f"{gettempdir()}/skills"
 makedirs(SKILLS_FOLDER, exist_ok=True)
 
 with open(SKILLS_LIST) as f:
-    skill_urls = f.read().split("\n")
+    skill_urls = [f for f in f.read().split("\n") if f.strip()]
 
 for url in skill_urls:
     repo = url.split("/")[-1].lower()
