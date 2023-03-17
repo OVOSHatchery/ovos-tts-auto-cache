@@ -8,3 +8,5 @@ https://github.com/OpenVoiceOS/skill-ovos-filebrowser
 https://github.com/OpenVoiceOS/skill-ovos-food-wizard
 https://github.com/OpenVoiceOS/skill-ovos-stop
 https://github.com/OpenVoiceOS/skill-ovos-news
+https://github.com/OpenVoiceOS/skill-ovos-dismissal
+https://github.com/OpenVoiceOS/skill-ovos-weather
