@@ -1,2 +1,5 @@
 https://github.com/OpenVoiceOS/skill-ovos-date-time
 https://github.com/OpenVoiceOS/skill-ovos-hello-world
+https://github.com/OpenVoiceOS/skill-ovos-naptime
+https://github.com/OpenVoiceOS/skill-ovos-personal
+https://github.com/OpenVoiceOS/skill-ovos-setup
